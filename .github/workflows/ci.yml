@@ -9,6 +9,8 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
+      - name: install
+        run: npm run install
       - name: Checkout repository
         run: npm run lint
       #   uses: actions/checkout@v2
