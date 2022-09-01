@@ -1,55 +1,25 @@
-
-name: Greeting from Mona
-on: push
+name: CI
+on:
+  push:
+    branches: [ "dev" ]
+  # pull_request:
+  #   branches: [ "master" ]
 
 jobs:
-  my-job:
-    name: My Job
+  CI:
     runs-on: ubuntu-latest
     steps:
-    - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
-      run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-
-
-# name: CI
-# on:
-#   push:
-#     branches: [ "dev" ]
-#   # pull_request:
-#   #   branches: [ "master" ]
-
-# jobs:
-#   CI:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: install
-#         run: npm run install
-#       - name: Checkout repository
-#         run: npm run lint
-      #   uses: actions/checkout@v2
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     # vite 需要在node>=12 的环境下执行
-      #     # puppeteer 需要在node>=14.1.0 的环境下执行
-      #     node-version: '16.x'
-      # - name: Cache
-      #   id: cache-dependencies
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: |
-      #       **/node_modules
-      #     key: ${{runner.OS}}-${{hashFiles('**/yarn.lock')}}
-      # - name: Installing Dependencies
-      #   if: steps.cache-dependencies.outputs.cache-hit != 'true'
-      #   run: yarn install
-      # - name: Running Lint
-      #   run: yarn lint
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          # vite 需要在node>=12 的环境下执行
+          # puppeteer 需要在node>=14.1.0 的环境下执行
+          node-version: '16.x'
+      - name: Installing Dependencies
+        run: npm install
+      - name: Running Lint
+        run: npm run lint
       # - name: Running Test
-      #   run: yarn test
+      #   run: npm test
