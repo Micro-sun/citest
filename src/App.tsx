@@ -7,8 +7,8 @@ interface Props {
   value: string;
 }
 
-const App: FC<Props> = () => { 
-  const [count, setCount] = useState(0);  
+const App: FC<Props> = () => {
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
