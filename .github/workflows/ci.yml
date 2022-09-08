@@ -23,3 +23,9 @@ jobs:
         run: npm run lint
       # - name: Running Test
       #   run: npm test
+  B:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: 
+          echo "kayneliu is a good boy."
