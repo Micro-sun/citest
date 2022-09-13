@@ -8,7 +8,7 @@ interface Props {
 }
 
 const App: FC<Props> = ({ value }) => {
-  const [count, setCount] = useState(0);  
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">

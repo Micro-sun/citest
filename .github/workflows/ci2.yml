@@ -1,7 +1,7 @@
 name: CI2
 on:
   push:
-    branches: [ "dev" ]
+    branches: ['dev']
   # pull_request:
   #   branches: [ "master" ]
 
@@ -10,5 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print
-        run: 
-          echo "kayneliu is a goodgood boy."
+        run: echo "how nice today."
